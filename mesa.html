@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="EmenDSRTV/Vista/Stytle.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Seleccionar Mesas</title>
+</head>
+
+
+</head>
+<body><!--LOGO DEL BAR-->
+    <div class="logo">
+            <img src="/EmenDSRTV/Vista/IMAGENES/log.png" alt="Logo">
+        </a>
+    </div>
+<!--TITULO PRINCIPAL-->
+    <section class="bienvenida ">
+        <h1>disruptivoclub</h1>
+    </section>
+
+  <!-- Contenedor de contenido principal -->
+  <div class="container-mt-5"> 
+    <h2>Seleccionar Mesas en el Bar</h2>
+    <form id="mesaForm" action="guardar_mesas.php" method="POST">
+        <div id="mesas">
+            <div class="mesa-container">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="numeropiso">Número de Piso</label>
+                        <input type="number" class="form-control" name="numeropiso[]" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="numeromesa">Número de Mesa</label>
+                        <input type="number" class="form-control" name="numeromesa[]" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cantidadpuestos">Cantidad de Puestos</label>
+                        <input type="number" class="form-control" name="cantidadpuestos[]" required>
+                    </div>
+                </div>
+                <div class="status disponible">Disponible</div>
+            </div>
+        </div>
+        <button type="button" class="btn-primary" id="addMesa">Agregar Mesa</button>
+        <button type="submit" class="btn-success">Guardar Mesas</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="carusel-box">
+    <ul class="carusel-images">
+      <li><img src="/EmenDSRTV/Vista/IMAGENES/fondoo.jpg" alt=""></li> 
+      <li><img src="/EmenDSRTV/Vista/IMAGENES/PEPE.jpg" alt=""></li>
+      <li><img src="/EmenDSRTV/Vista/IMAGENES/PEPE.jpg" alt=""></li>
+    </ul>
+  </div>
+  
+  
+<!-- Pie de página -->
+<footer class="foter">
+    <div class="tex">
+      <p>&copy; 2024 Emen. Todos los derechos reservados.</p>
+      <p>Para solicitar permisos, contacta a: <a href="mailto:juan.perez@email.com">emen21259@gmail.com</a></p>
+    </div>
+  </footer>
+  
+
+
+
+
+    <script>
+        document.getElementById('addMesa').addEventListener('click', function() {
+            const mesaContainer = document.createElement('div');
+            mesaContainer.className = 'mesa-container';
+            mesaContainer.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="numeropiso">Número de Piso</label>
+                        <input type="number" class="form-control" name="numeropiso[]" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="numeromesa">Número de Mesa</label>
+                        <input type="number" class="form-control" name="numeromesa[]" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cantidadpuestos">Cantidad de Puestos</label>
+                        <input type="number" class="form-control" name="cantidadpuestos[]" required>
+                    </div>
+                </div>
+                <div class="status disponible">Disponible</div>
+            `;
+            document.getElementById('mesas').appendChild(mesaContainer);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
