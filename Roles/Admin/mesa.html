@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Seleccionar Mesas</title>
+    <style>
+        .mesa-container {
+            margin-bottom: 15px;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .disponible {
+            color: green;
+        }
+        .no-disponible {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Seleccionar Mesas en el Bar</h2>
+        <form id="mesaForm" action="guardar_mesas.php" method="POST">
+            <div id="mesas">
+                <div class="mesa-container">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="numeropiso">Número de Piso</label>
+                            <input type="number" class="form-control" name="numeropiso[]" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="numeromesa">Número de Mesa</label>
+                            <input type="number" class="form-control" name="numeromesa[]" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cantidadpuestos">Cantidad de Puestos</label>
+                            <input type="number" class="form-control" name="cantidadpuestos[]" required>
+                        </div>
+                    </div>
+                    <div class="status disponible">Disponible</div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="addMesa">Agregar Mesa</button>
+            <button type="submit" class="btn btn-success mt-3">Guardar Mesas</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('addMesa').addEventListener('click', function() {
+            const mesaContainer = document.createElement('div');
+            mesaContainer.className = 'mesa-container';
+            mesaContainer.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="numeropiso">Número de Piso</label>
+                        <input type="number" class="form-control" name="numeropiso[]" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="numeromesa">Número de Mesa</label>
+                        <input type="number" class="form-control" name="numeromesa[]" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="cantidadpuestos">Cantidad de Puestos</label>
+                        <input type="number" class="form-control" name="cantidadpuestos[]" required>
+                    </div>
+                </div>
+                <div class="status disponible">Disponible</div>
+            `;
+            document.getElementById('mesas').appendChild(mesaContainer);
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
