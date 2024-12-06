@@ -3,73 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="EmenDSRTV/Vista/Stytle.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Seleccionar Mesas</title>
+    <style>
+        .mesa-container {
+            margin-bottom: 15px;
+        }
+        .status {
+            font-weight: bold;
+        }
+        .disponible {
+            color: green;
+        }
+        .no-disponible {
+            color: red;
+        }
+    </style>
 </head>
-
-
-</head>
-<body><!--LOGO DEL BAR-->
-    <div class="logo">
-            <img src="/EmenDSRTV/Vista/IMAGENES/log.png" alt="Logo">
-        </a>
-    </div>
-<!--TITULO PRINCIPAL-->
-    <section class="bienvenida ">
-        <h1>disruptivoclub</h1>
-    </section>
-
-  <!-- Contenedor de contenido principal -->
-  <div class="container-mt-5"> 
-    <h2>Seleccionar Mesas en el Bar</h2>
-    <form id="mesaForm" action="guardar_mesas.php" method="POST">
-        <div id="mesas">
-            <div class="mesa-container">
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label for="numeropiso">Número de Piso</label>
-                        <input type="number" class="form-control" name="numeropiso[]" required>
+<body>
+    <div class="container mt-5">
+        <h2>Seleccionar Mesas en el Bar</h2>
+        <form id="mesaForm" action="guardar_mesas.php" method="POST">
+            <div id="mesas">
+                <div class="mesa-container">
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="numeropiso">Número de Piso</label>
+                            <input type="number" class="form-control" name="numeropiso[]" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="numeromesa">Número de Mesa</label>
+                            <input type="number" class="form-control" name="numeromesa[]" required>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cantidadpuestos">Cantidad de Puestos</label>
+                            <input type="number" class="form-control" name="cantidadpuestos[]" required>
+                        </div>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label for="numeromesa">Número de Mesa</label>
-                        <input type="number" class="form-control" name="numeromesa[]" required>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label for="cantidadpuestos">Cantidad de Puestos</label>
-                        <input type="number" class="form-control" name="cantidadpuestos[]" required>
-                    </div>
+                    <div class="status disponible">Disponible</div>
                 </div>
-                <div class="status disponible">Disponible</div>
             </div>
-        </div>
-        <button type="button" class="btn-primary" id="addMesa">Agregar Mesa</button>
-        <button type="submit" class="btn-success">Guardar Mesas</button>
-        </div>
-    </form>
-</div>
-
-
-<div class="carusel-box">
-    <ul class="carusel-images">
-      <li><img src="/EmenDSRTV/Vista/IMAGENES/fondoo.jpg" alt=""></li> 
-      <li><img src="/EmenDSRTV/Vista/IMAGENES/PEPE.jpg" alt=""></li>
-      <li><img src="/EmenDSRTV/Vista/IMAGENES/PEPE.jpg" alt=""></li>
-    </ul>
-  </div>
-  
-  
-<!-- Pie de página -->
-<footer class="foter">
-    <div class="tex">
-      <p>&copy; 2024 Emen. Todos los derechos reservados.</p>
-      <p>Para solicitar permisos, contacta a: <a href="mailto:juan.perez@email.com">emen21259@gmail.com</a></p>
+            <button type="button" class="btn btn-primary" id="addMesa">Agregar Mesa</button>
+            <button type="submit" class="btn btn-success mt-3">Guardar Mesas</button>
+        </form>
     </div>
-  </footer>
-  
-
-
-
 
     <script>
         document.getElementById('addMesa').addEventListener('click', function() {
