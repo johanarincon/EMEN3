@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-12-2024 a las 20:15:45
+-- Tiempo de generación: 11-12-2024 a las 07:58:58
 -- Versión del servidor: 8.0.37
 -- Versión de PHP: 8.2.12
 
@@ -53,6 +53,13 @@ CREATE TABLE `cliente` (
   `roles_idRoles` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`idClientes`, `Nombre`, `Documento`, `Correo`, `Contraseña`, `Fechadenacimiento`, `roles_idRoles`) VALUES
+(12, '123', '123', '123@gmail.com', 0x243279243130243731526b35495258356f5a5161783739774b6436746531686d7a7551653868525736492f4d2f4563594d39305039304e564f6d7171, '2003-12-11 00:00:00', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -73,7 +80,8 @@ CREATE TABLE `codigonis` (
 --
 
 INSERT INTO `codigonis` (`idCodigoNIS`, `Descripcion`, `mesa_idMesa`, `menu_idMenu`, `cliente_idClientes`, `Producto_idProducto`) VALUES
-(2, '124', 7, 2, NULL, NULL);
+(2, '124', 7, 2, NULL, NULL),
+(3, '21432', 8, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -146,7 +154,8 @@ INSERT INTO `mesa` (`idMesa`, `Numeropiso`, `NumeroMesa`, `CantidadPuestos`) VAL
 (4, 12, 12, 12),
 (5, 12, 12, 12),
 (6, 12, 12, 12),
-(7, 2, 123, 123122);
+(7, 2, 123, 123122),
+(8, 453, 123, 123);
 
 -- --------------------------------------------------------
 
@@ -302,13 +311,13 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idClientes` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idClientes` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `codigonis`
 --
 ALTER TABLE `codigonis`
-  MODIFY `idCodigoNIS` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCodigoNIS` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `detalledeorden`
@@ -332,7 +341,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT de la tabla `mesa`
 --
 ALTER TABLE `mesa`
-  MODIFY `idMesa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idMesa` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `metododepago`
